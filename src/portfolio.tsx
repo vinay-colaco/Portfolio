@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import { Github, Linkedin, Mail, ExternalLink, ChevronDown, BookOpen } from 'lucide-react'
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Section } from './Component/section'
 
 const NetworkBackground = () => {

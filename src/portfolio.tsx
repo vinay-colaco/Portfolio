@@ -1,11 +1,10 @@
-"use client"
-
-import { useState, useEffect, useRef } from 'react'
-import { motion, useScroll, useSpring, useInView } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, useScroll, useSpring } from 'framer-motion'
 import { Github, Linkedin, Mail, ExternalLink, ChevronDown, BookOpen } from 'lucide-react'
+import { Section } from './Component/section'
 
 const NetworkBackground = () => {
-  const count = 75 // Increased node count for denser network
+  const count = 75
   const nodes = Array.from({ length: count }, (_, i) => ({
     id: i,
     x: Math.random(),
@@ -49,7 +48,7 @@ const NetworkBackground = () => {
           const distance = Math.sqrt(
             Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
           )
-          if (distance < 0.3) { // Only draw lines between nearby nodes
+          if (distance < 0.3) {
             return (
               <motion.line
                 key={`${i}-${j}`}
@@ -77,24 +76,6 @@ const NetworkBackground = () => {
         })
       )}
     </svg>
-  )
-}
-
-const Section = ({ children, id }) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.5 })
-
-  return (
-    <motion.section
-      id={id}
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="py-20"
-    >
-      {children}
-    </motion.section>
   )
 }
 
@@ -301,7 +282,8 @@ export default function Portfolio() {
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 300, damping: 10 }}
                 >
-                  <h4 className="text-xl font-semibold mb-2">{post.title}</h4>
+                  <h4 className="text-xl font-semibol
+d mb-2">{post.title}</h4>
                   <p className="mb-4">{post.description}</p>
                   <motion.a
                     href="#"

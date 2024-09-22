@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform, useSpring, useInView, useAnimation } from 'framer-motion'
+import { motion, useScroll, useSpring, useInView } from 'framer-motion'
 import { Github, Linkedin, Mail, ExternalLink, ChevronDown, BookOpen } from 'lucide-react'
 
 const NetworkBackground = () => {
